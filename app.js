@@ -17,12 +17,12 @@ var personSetup = require('./controllers/setupController')
 var mongoConfig = JSON.parse(fs.readFileSync(__dirname + '/config/mongo-config.json', 'utf8'));
 
 var mongourl = mongoConfig.mongourl
-
+//#region Starting...
 // configure assets and vies
 app.use('/assets', express.static(__dirname + '/public'))
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs')
-
+//#endregion
 
 // connect to mongodb
 mongoose.connect(mongourl)
