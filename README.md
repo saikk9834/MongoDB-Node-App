@@ -1,11 +1,11 @@
-## MongoDB CRUD in Node.js - Example / Demo code
+## MongoDB CRUD in Node.js - Example / Demo Code
 
 ## What is this?
 Demo code that excercises MongoDB Create Read Update Delete (CRUD) operations with the mongoose npm module
 
 ![Alt text](/screenshots/mongo_read.png?raw=true)
 
-## Contains
+## Contains:
 - /config = mongo connection config (sample)
 - /controller = controller code with routes and DB operations in personController.js. and DB setup+purge API in setupController
 - model = person DB data model
@@ -19,7 +19,7 @@ Demo code that excercises MongoDB Create Read Update Delete (CRUD) operations wi
 - Update person (needs MongoID from list function) - UPDATE crUd
 - Delete person (needs MongoID from list function) - DELETE cruD
 
-### Setup API
+### Setup API:
 purge mongo collection = point browser at http://0.0.0.0:3000/person/purge
 setup / seed data in collection = http://0.0.0.0:3000/person/setup
 
