@@ -78,7 +78,7 @@ CRUD operations *create*, *read*, *update*, and *delete*
 
 You need to launch the MongoDB Shell before we go ahead.
 
-<a href='didact://?commandId=mdb.connectWithURI' title='Launch MongoDB Shell'><button>Launch MongoDB Shell</button></a>
+<a href='didact://?commandId=mdb.openMongoDBShell' title='Launch MongoDB Shell'><button>Launch MongoDB Shell</button></a>
 
 ## Create Operations
 
