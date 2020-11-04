@@ -19,7 +19,7 @@
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      margin: 4px 2px;
+      margin: 4px 10px;
       cursor: pointer;
       position: fixed;
       left: 78%
@@ -78,8 +78,7 @@ CRUD operations *create*, *read*, *update*, and *delete*
 
 You need to launch the MongoDB Shell before we go ahead.
 
-<a href='didact://?commandId=mdb.treeViewOpenMongoDBShell' title='Launch MongoDB Shell'><button>Launch MongoDB Shell</button></a>   
-
+<a href='didact://?commandId=mdb.connectWithURI' title='Launch MongoDB Shell'><button>Launch MongoDB Shell</button></a>
 
 ## Create Operations
 
