@@ -1,150 +1,195 @@
-## MongoDB CRUD in Node.js - Example / Demo Code
 
-## What is this?
-Demo code that excercises MongoDB Create Read Update Delete (CRUD) operations with the mongoose npm module
+<!DOCTYPE html>
+<html>
 
-![Alt text](/screenshots/mongo_read.png?raw=true)
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+    }
+    .button {
+      background-color: #e00;
+      border-radius: 8px;
+      border: none;
+      color: white;
+      padding: 15px 75px;
+      padding-bottom: 35px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      position: fixed;
+      left: 78%
+    }
+    .navbar {
+      overflow: hidden;
+      background-color: black;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      text-align: center;
+      padding: 5px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .main {
+      padding: 16px;
+      margin-top: 65px;
+      height: 1500px;
+      /* Used in this example to enable scrolling */
+    }
+  </style>
+</head>
 
-## Contains:
-- /config = mongo connection config (sample)
-- /controller = controller code with routes and DB operations in personController.js. and DB setup+purge API in setupController
-- model = person DB data model
-- /public = cascading stylesheet 
-- /views = EJS views / HTML UI
-- / = app.js main webserver code & package.json 
+<body>
 
-### Mongo Client UI Functionality:
-- Add a person - CREATE Crud
-- List person(s) - READ cRud
-- Update person (needs MongoID from list function) - UPDATE crUd
-- Delete person (needs MongoID from list function) - DELETE cruD
+<div class="navbar">
+<img
+          height="pixels"
+          src="https://marketplace.redhat.com/en-us/assets/red-hat-marketplace-logo-horizontal-reverse.svg"
+          alt="Red Hat Marketplace logo" title="Red Hat Marketplace logo" style="height: 50px; margin-left: 3%;">
+          <a href="https://marketplace.redhat.com/en-us/products/mongodb-enterprise-advanced-from-ibm/pricing#pricing-and-plans">
+              <button class="button">Purchase</button>
+          </a>
+                
+  </div>
 
-### Setup API:
-purge mongo collection = point browser at http://0.0.0.0:3000/person/purge
-setup / seed data in collection = http://0.0.0.0:3000/person/setup
-
-
-## Installation overview
-
-### Install mongo DB with auth model
-See https://docs.mongodb.com/manual/installation/
-
-
-### Clone Repo an install module dependencies
-```
-git clone https://github.com/ajyounguk/mongodb-crud-demo
-cd mongodb-crud-demo
-npm install
-```
-
-### Mongo Config
-Copy /config/mongo-config-sample.json to mongo-config.json
-Needs mongo username and password and mongo running with --auth
-```
-cp config-sample.json config.json
-```
-
-
-## How to run it
-```
-node app.js
-```
-
-point your browser at the lport 3000 to load Client
-http://0.0.0.0:3000
-
-
-## DB user credentials example
-This is **NOT** a hardened/strong security model for mongo, but a simple set of reference creds to get you started:
-
-
-1. Start mongo with no auth model:
-```
-mongod
-```
-
-2. 
-Connect to mongo cli:
-```
-mongo
-```
-
-3. Create database admin user in mongo cli:
-```
-use admin
-db.createUser(
-  {
-    user: "admin",
-    pwd: "mypassword",
-    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
-  }
-)
-```
-
-4. Restart db with authentication model on:
-```
-mongod -- auth
-```
-
-5. Connect to mongo cli and login with admin user:
-```
-mongo
-
-use admin
-db.auth("admin", "mypassword" )
-```
-
-6. Create new database (data) and database users 
-*PS: if databse does not exist already, it's created*
-
-```
-Use data
-db.createUser(
-  {
-    user: "data_dev",
-    pwd: "devpassword",
-    roles: [
-       { role: "readWrite", db: "data" }
-    ]
-  }
-)
-db.createUser(
-  {
-    user: "data_admin",
-    pwd: "adminpassword",
-    roles: [
-       { role: "dbOwner", db: "data" }
-    ]
-  }
-)
-```
-
-
-7. Create (person) collection in (data) databse
-```
-{
-	Create : "person"
-}
-```
-
-8. Update the mongo connection configuration file (/config/mongo-config.json). Using the example dev database user above the config file would look like:
-```
-{
-    "mongourl": "mongodb://data_dev:devpassword@127.0.0.1:27017/data"
-}
-```
-
-
-## More Info
-For more information on MongoDB:
-https://www.mongodb.com/what-is-mongodb
-
-For more information on Express:
-https://www.npmjs.com/package/express
-
-For more information on Mongoose:
-https://www.npmjs.com/package/mongoose
+<div class="main">
 
 
 
-### EOF Readme.# MongoDB-Node-App
+
+
+# MongoDB CRUD Operations
+
+
+CRUD operations *create*, *read*, *update*, and *delete*
+
+## Pre-Requisites
+
+You need to launch the MongoDB Shell before we go ahead.
+
+<a href='didact://?commandId=mdb.treeViewOpenMongoDBShell' title='Launch MongoDB Shell'><button>Launch MongoDB Shell</button></a>   
+
+
+## Create Operations
+
+
+Create or insert operations add new documents to a collection. If the
+collection does not currently exist, insert operations will create the
+collection.
+
+MongoDB provides the following methods to insert documents into a
+collection:
+
+* `db.collection.insertOne()`
+
+* `db.collection.insertMany()`
+
+In MongoDB, insert operations target a single `collection`. All
+write operations in MongoDB are `atomic` on the level of a single
+`document`.
+
+![url](https://docs.mongodb.com/manual/_images/crud-annotated-mongodb-insertOne.bakedsvg.svg)
+
+### Example
+
+> `db.inventory.insertOne(
+   { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
+)`
+
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$db.inventory.insertOne({item:"canvas",qty:100,tags:["cotton"],size:{h:28,w:35.5,uom:"cm"}})' title='Create'><button>Create</button></a>
+
+## Read Operations
+
+Read operations retrieve `documents` from a `collection`; i.e. query a collection for
+documents. MongoDB provides the following methods to read documents from
+a collection:
+
+* `db.collection.find()`
+
+You can specify `query filters or criteria` that identify the documents to return.
+
+![url](https://docs.mongodb.com/manual/_images/crud-annotated-mongodb-updateMany.bakedsvg.svg)
+
+### Example
+
+
+> `db.inventory.find( { item: "canvas" } )`
+
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$db.inventory.find({item:"canvas"})' title='Read'><button>Read</button></a>
+
+## Update Operations
+
+Update operations modify existing `documents` in a `collection`. MongoDB
+provides the following methods to update documents of a collection:
+
+* `db.collection.updateOne()`
+
+* `db.collection.updateMany()`
+
+* `db.collection.replaceOne()`
+
+In MongoDB, update operations target a single collection. All write
+operations in MongoDB are `atomic` on the level of a single document.
+
+You can specify criteria, or filters, that identify the documents to
+update. These :ref:`filters` use the same
+syntax as read operations.
+
+![url](https://docs.mongodb.com/manual/_images/crud-annotated-mongodb-updateMany.bakedsvg.svg)
+
+### Example 
+
+
+> `db.inventory.updateOne(
+   { item: "canvas" },
+   {
+     $set: { "size.uom": "cm", status: "P" },
+     $currentDate: { lastModified: true }
+   }
+)`
+
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$db.inventory.updateOne({item:"canvas"},{$set:{"size.uom":"cm",status:"P"},$currentDate:{lastModified:true}})' title='Update'><button>Update</button></a>
+
+## Delete Operations
+
+Delete operations remove documents from a collection. MongoDB provides
+the following methods to delete documents of a collection:
+
+* `db.collection.deleteOne()`
+
+* `db.collection.deleteMany()`
+
+In MongoDB, delete operations target a single :term:`collection`. All
+write operations in MongoDB are `atomic` on the level of a single document.
+
+You can specify criteria, or filters, that identify the documents to
+remove. These `filters` use the same
+syntax as read operations.
+
+![url](https://docs.mongodb.com/manual/_images/crud-annotated-mongodb-deleteMany.bakedsvg.svg)
+
+### Example
+
+
+> `db.inventory.deleteMany({})`
+
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$db.inventory.deleteMany({})' title='Delete'><button>Delete</button></a>
+
+</div>
+
+</body>
+
+</html>
+
+
