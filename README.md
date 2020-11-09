@@ -185,6 +185,18 @@ syntax as read operations.
 
 <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$db.inventory.deleteMany({})' title='Delete'><button>Delete</button></a>
 
+
+
+### SAMPLE APPLICATIONS
+
+
+<a href='didact://?commandId=vscode.didact.startDidact$$/Users/ashrithshetty/Downloads/ashrithshetty/new/MongoDB-Node-App/Sample-Application-1/README.md' title='Sample Application 1'><button>Sample Application 1</button></a>
+
+
+
+
+
+
 </div>
 
 </body>
