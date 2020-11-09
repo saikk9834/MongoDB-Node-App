@@ -19,7 +19,7 @@
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      margin: 4px 10px;
+      margin: 4px 2px;
       cursor: pointer;
       position: fixed;
       left: 78%
@@ -76,9 +76,13 @@ CRUD operations *create*, *read*, *update*, and *delete*
 
 ## Pre-Requisites
 
-You need to launch the MongoDB Shell before we go ahead.
+Connect & Launch MongoDB Shell <span>&#8594;</span>
+ <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$mongo%20%22mongodb://a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com:27017/?readPreference=primary%26ssl=false%22' title='Connect'><button>Connect & Launch</button></a>   
 
-<a href='didact://?commandId=mdb.openMongoDBShell' title='Launch MongoDB Shell'><button>Launch MongoDB Shell</button></a>
+## OR
+
+Connect to MongoDB of your choice <span>&#8594;</span>
+ <a href='didact://?commandId=mdb.connect' title='Configure and Connect'><button>Configure & Connect</button></a>   
 
 ## Create Operations
 
@@ -186,13 +190,11 @@ syntax as read operations.
 <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$db.inventory.deleteMany({})' title='Delete'><button>Delete</button></a>
 
 
+### Sample Applications
 
-### SAMPLE APPLICATIONS
+Feel free to try some sample applications which have integration with `MongoDB`
 
-
-<a href='didact://?commandId=vscode.didact.startDidact$$/Users/ashrithshetty/Downloads/ashrithshetty/new/MongoDB-Node-App/Sample-Application-1/README.md' title='Sample Application 1'><button>Sample Application 1</button></a>
-
-
+ <a href='didact://?commandId=vscode.didact.startDidact&text=/Users/ashrithshetty/Downloads/ashrithshetty/new/MongoDB-Node-App/Sample-Application-1/sample-app1-README.md' title='Sample Application 1'><button>Sample Application 1</button></a> 
 
 
 
