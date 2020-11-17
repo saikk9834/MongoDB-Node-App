@@ -150,10 +150,13 @@ module.exports = function (app, mongoose) {
         }
         //Steps to make the Delete button functional
         // STEP 1: Delete the below code
-        
+        ui.data[ui.menuitem]=''
+        res.render('./index.ejs', {
+            ui:ui
+        })
 
         //STEP 2: Uncomment below lines
-        Person.findByIdAndRemove(req.body.mongoid, function (err, person) {
+        /*Person.findByIdAndRemove(req.body.mongoid, function (err, person) {
 
             
             if (err) {
@@ -173,7 +176,7 @@ module.exports = function (app, mongoose) {
             res.render('./index.ejs', {
                 ui: ui
             })
-        })
+        })*/
        
     })
 }
