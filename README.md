@@ -195,7 +195,7 @@ syntax as read operations.
 This sample application helps you explore `CRUD` operations with a sample react application <span>&#8594;</span>
 <a href='didact://?commandId=vscode.didact.startDidact&text=/Users/ashrithshetty/Downloads/ashrithshetty/new/MongoDB-Node-App/Sample-Application-1/sample-app1-README.md' title='Sample Application 1'><button>Sample Application 1</button></a> 
 
-
+<a href='didact://?commandId=vscode.didact.startDidact&projectFilePath=Sample-Application-1/sample-app1-README.md' title='Sample Application 1'><button>Sample Application 1</button></a> 
 
 
 </div>
