@@ -78,8 +78,43 @@ Phone: <%= ui.data[2].data[i].telephone %>
         <br>
     </form>
     <br>
+    <% if ( typeof ui.data[4] != 'object' ) { %>
+    <textarea name="response" id ="response" style="color: red; font-size: large;" readonly>
+    Please make sure that you have made the following changes before trying out DELETE function:
+     1. Click on the exit Button to close the program
+     2. Go to the personController.js file under controllers
+     3. Follow the steps on Line 151
+        OR
+     3. Delete the code from Line 153 to 156
+     4. Paste the following code below that:
+        'Person.findByIdAndRemove(req.body.mongoid, function (err, person) {
 
-    <label >Response:</label>
-    <textarea name="response" id ="response"  readonly><%- JSON.stringify(ui.data[4],null,3) %></textarea>
+            
+        if (err) {
+            ui.data[ui.menuitem].status = '500'
+            ui.data[ui.menuitem].data = err
+        } else {
+            if (person == null) {
+                ui.data[ui.menuitem].status = '404'
+                ui.data[ui.menuitem].data = 'person id ' + req.body.mongoid + ' not found'
+            } else {
+                ui.data[ui.menuitem].status = '200'
+                ui.data[ui.menuitem].data = person
+            }
+        }
+
+        ui.data[ui.menuitem].action = 'delete'
+        res.render('./index.ejs', {
+            ui: ui
+        })
+    })'
+    </textarea>
+    <%} else {%>
+    <label>Response:</label>
+    <textarea name="response" id ="response"  readonly>
+        <%- JSON.stringify(ui.data[4],null,3) %>
+    </textarea>
+    <%}%>
+    
 </div>
 

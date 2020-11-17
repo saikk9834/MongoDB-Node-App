@@ -1,4 +1,5 @@
 module.exports = function (app, mongoose) {
+// vscode-fold=#
 
     var ui = {
         menuitem: 1,
@@ -10,7 +11,6 @@ module.exports = function (app, mongoose) {
     var urlencodedParser = bodyParser.urlencoded({
         extended: false
     })
-
     // serve up index
     app.get('/', function (req, res) {
 
@@ -24,7 +24,7 @@ module.exports = function (app, mongoose) {
             ui: ui
         })
     })
-
+    
     // 1. Add Person
     app.post('/person', urlencodedParser, function (req, res) {
 
@@ -131,17 +131,16 @@ module.exports = function (app, mongoose) {
         })
     })
 
-
     // 4. Delete Persons
     app.post('/person/delete', urlencodedParser, function (req, res) {
-
         ui.menuitem = 4
         ui.data[ui.menuitem] = {
             status: '',
             action: '',
             data: ''
         }
-
+        
+        
         // is id valid?
         if (!mongoose.Types.ObjectId.isValid(req.body.mongoid)) {
             res.status(500)
@@ -149,9 +148,14 @@ module.exports = function (app, mongoose) {
             ui.data[ui.menuitem].data = ui.data[ui.menuitem].status = '500'
             ui.data[ui.menuitem].data = req.body.mongoid + ' is not a valid mongo ID'
         }
+        //Steps to make the Delete button functional
+        // STEP 1: Delete the below code
+        
 
+        //STEP 2: Uncomment below lines
         Person.findByIdAndRemove(req.body.mongoid, function (err, person) {
 
+            
             if (err) {
                 ui.data[ui.menuitem].status = '500'
                 ui.data[ui.menuitem].data = err
@@ -165,11 +169,11 @@ module.exports = function (app, mongoose) {
                 }
             }
 
-            ui.data[ui.menuitem].action = 'update'
+            ui.data[ui.menuitem].action = 'delete'
             res.render('./index.ejs', {
                 ui: ui
             })
-
         })
+       
     })
 }

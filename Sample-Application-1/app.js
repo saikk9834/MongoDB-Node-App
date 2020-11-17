@@ -12,17 +12,22 @@ var port = process.env.PORT || 3000
 // Controllers
 var personController = require('./controllers/personController')
 var personSetup = require('./controllers/setupController')
+const { aggregate } = require('./models/personModel')
 
 // load mongo config
 var mongoConfig = JSON.parse(fs.readFileSync(__dirname + '/config/mongo-config.json', 'utf8'));
 
 var mongourl = mongoConfig.mongourl
-//#region Starting...
+
 // configure assets and vies
 app.use('/assets', express.static(__dirname + '/public'))
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs')
-//#endregion
+
+app.get('/exit', function(req,res) {
+    res.render('/');
+    process.abort(0);
+})
 
 // connect to mongodb
 mongoose.connect(mongourl)
@@ -32,6 +37,6 @@ personController(app, mongoose)
 personSetup(app, mongoose)
 
 // kick web server off
-app.listen(port)
+var srvr = app.listen(port)
 
 console.log('mongo client listening on port', port)
