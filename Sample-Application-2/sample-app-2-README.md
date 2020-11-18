@@ -1,7 +1,7 @@
 
 # MongoDB REST API
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T1$$cd Sample-Application-2 %26%26 npm start' title='Launch'><button class="button1">Launch Application</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T1$$cd MongoDB-Node-App/Sample-Application-2 %26%26 npm start' title='Launch'><button class="button1">Launch Application</button></a>
 
 ## Overview
 
