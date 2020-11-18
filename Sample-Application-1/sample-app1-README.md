@@ -133,7 +133,7 @@ Try performing the Create, Read and Update operations. The code is already writt
 
 After performing Create, Read and Update operations successfully, you are required to go to the 'Delete' tab, and try deleting any entry. You will see a message that will request you to make some changes. Follow those steps and thereafter the 'Delete' button will function.
 
-## How to make the DELETE button work
+## How to make the DELETE button work?
 Please make sure that you have made the following changes before trying out DELETE function:
 1. Click on the exit Button to close the program
 
@@ -147,10 +147,9 @@ Please make sure that you have made the following changes before trying out DELE
 3. Delete the code from Line 153 to 156
 4. Paste the following code below that:
 
-  <textarea style='background:black; color:white; font-family:monospace' readonly>   
-
+```
     Person.findByIdAndRemove(req.body.mongoid, function (err, person) {  
-  
+
         if (err) {
             ui.data[ui.menuitem].status = '500'
             ui.data[ui.menuitem].data = err 
@@ -169,8 +168,7 @@ Please make sure that you have made the following changes before trying out DELE
         }) 
     })
   
-</textarea>  
-
+```
 Now Relaunch the app!!
 
 <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$node%20MongoDB-Node-App/Sample-Application-1/app.js' title='Launch'><button class="button1">Relaunch Application</button></a>
