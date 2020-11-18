@@ -136,31 +136,44 @@ After performing Create, Read and Update operations successfully, you are requir
 ## How to make the DELETE button work
 Please make sure that you have made the following changes before trying out DELETE function:
 1. Click on the exit Button to close the program
-2. Go to the personController.js file under controllers
+
+<img
+          src="./screenshots/mongo_exit.png"
+          alt="Exit Button" title="Exit Button" style="height: 250px; margin-left: 3%;">
+
+2. Go to the `personController.js` file in controllers folder
 3. Follow the steps on Line 151
 ### OR
 3. Delete the code from Line 153 to 156
 4. Paste the following code below that:
-        
-    Person.findByIdAndRemove(req.body.mongoid, function (err, person) { <br>   
-        if (err) {<br> 
-            ui.data[ui.menuitem].status = '500'<br> 
-            ui.data[ui.menuitem].data = err <br> 
-        } else {<br> 
-            if (person == null) {<br> 
-                ui.data[ui.menuitem].status = '404'<br> 
-                ui.data[ui.menuitem].data = 'person id ' + req.body.mongoid + ' not found'<br> 
-            } else {<br> 
-                ui.data[ui.menuitem].status = '200'<br> 
-                ui.data[ui.menuitem].data = person<br> 
-            }<br> 
-        }<br> 
-        ui.data[ui.menuitem].action = 'delete'<br> 
-        res.render('./index.ejs', {<br> 
-            ui: ui<br> 
-        })<br> 
-    })<br> 
-    
+
+  <textarea style='background:black; color:white; font-family:monospace' readonly>   
+
+    Person.findByIdAndRemove(req.body.mongoid, function (err, person) {  
+  
+        if (err) {
+            ui.data[ui.menuitem].status = '500'
+            ui.data[ui.menuitem].data = err 
+        } else {
+            if (person == null) { 
+                ui.data[ui.menuitem].status = '404' 
+                ui.data[ui.menuitem].data = 'person id ' + req.body.mongoid + ' not found' 
+            } else { 
+                ui.data[ui.menuitem].status = '200' 
+                ui.data[ui.menuitem].data = person 
+            } 
+        } 
+        ui.data[ui.menuitem].action = 'delete' 
+        res.render('./index.ejs', { 
+            ui: ui 
+        }) 
+    })
+  
+</textarea>  
+
+Now Relaunch the app!!
+
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$node%20MongoDB-Node-App/Sample-Application-1/app.js' title='Launch'><button class="button1">Relaunch Application</button></a>
 ## More Info
 For more information on MongoDB:
 https://www.mongodb.com/what-is-mongodb
