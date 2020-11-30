@@ -11,7 +11,34 @@ Connect & Launch MongoDB Shell <span>&#8594;</span>
 ## OR
 
 Connect to MongoDB of your choice <span>&#8594;</span>
- <a href='didact://?commandId=mdb.connect' title='Configure and Connect'><button>Configure & Connect</button></a>   
+ <a href='didact://?commandId=mdb.connect' title='Configure and Connect'><button>Configure & Connect</button></a>  
+ 
+## Login to the API (create a server connection on the API server side)
+
+    POST http://localhost:3000/api/login
+    Content-Type: application/json
+    
+    {
+      "username": "",
+      "password": "",
+      "hosts": [
+        {
+          "host": "localhost",
+          "port": 27017
+        }
+      ]
+    }
+
+    
+Response:
+    
+    {
+        "success" : true,
+        "token": "TOKEN"
+    } 
+    
+
+ <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl --header "Content-Type: application/json" --request POST --data %27{"username":"","password":"","hosts":[{"host":"a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com","port": 27017}]}%27 http://localhost:3000/api/login --silent %3E token %26%26 export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 token%60' title='Launch'><button class="button1">Login</button></a>
 
 ## Create Operations
 
@@ -120,6 +147,19 @@ syntax as read operations.
 > `db.inventory.removeOne({})`
 
 <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g -H "X-TOKEN: $token"  --request DELETE %27http://localhost:3000/api/database/test/inventory/removeOne?query={"item":"canvas"}%27' title='Launch'><button class="button1">Delete</button></a>
+
+## Logout (to destroy the connexion on the server side)
+
+    POST http://localhost:3000/api/logout
+    X-TOKEN: TOKEN
+   
+Response: 
+
+    {
+       "success": true
+    }
+
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl %2Dg %2D%2Dheader "X-TOKEN: $token" %2D%2Drequest POST  %27http://localhost:3000/api/logout%27$$cat token' title='Launch'><button class="button1">Logout</button></a>
 
 
 ### Sample Applications
