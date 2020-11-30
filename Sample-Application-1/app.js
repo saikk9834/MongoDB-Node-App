@@ -24,10 +24,6 @@ app.use('/assets', express.static(__dirname + '/public'))
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs')
 
-app.get('/exit', function(req,res) {
-    res.render('/');
-    process.abort(0);
-})
 
 // connect to mongodb
 mongoose.connect(mongourl)
@@ -38,5 +34,11 @@ personSetup(app, mongoose)
 
 // kick web server off
 var srvr = app.listen(port)
+
+app.get('/exit', function(req,res) {
+    res.render('index.ejs');
+    srvr.close(0);
+
+})
 
 console.log('mongo client listening on port', port)

@@ -149,7 +149,7 @@ module.exports = function (app, mongoose) {
             ui.data[ui.menuitem].data = req.body.mongoid + ' is not a valid mongo ID'
         }
         //Steps to make the Delete button functional
-        // STEP 1: Delete the below code
+        STEP 1: Delete the below code
         ui.data[ui.menuitem]=''
         res.render('./index.ejs', {
             ui:ui
@@ -177,6 +177,7 @@ module.exports = function (app, mongoose) {
                 ui: ui
             })
         })*/
+        //END COMMENT
        
     })
 }

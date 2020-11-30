@@ -17,7 +17,9 @@
         var i;
         var activediv = document.getElementsByClassName("menu-div");
         var activebutton = document.getElementsByClassName("menu-button");
-        
+        if(activeOption==5){
+            process.exit(0);
+        }
         for (i = 0; i < activediv.length; i++) {
             if (i == activeOption) {    
                 activediv[i].style.display = "block"; 
