@@ -39,7 +39,8 @@ write operations in MongoDB are `atomic` on the level of a single
    { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
 )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$db.inventory.insertOne({item:"canvas",qty:100,tags:["cotton"],size:{h:28,w:35.5,uom:"cm"}})' title='Create'><button>Create</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27%7B"item":"canvas","qty":"100","tags":["cotton"],"size":{"h":28,"w":35.5,"uom":"cm"}%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2Finsert' title='Launch'><button class="button1">Insert</button></a>
+
 
 ## Read Operations
 
@@ -53,12 +54,13 @@ You can specify `query filters or criteria` that identify the documents to retur
 
 ![url](https://docs.mongodb.com/manual/_images/crud-annotated-mongodb-updateMany.bakedsvg.svg)
 
+
 ### Example
 
 
 > `db.inventory.find( { item: "canvas" } )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$db.inventory.find({item:"canvas"})' title='Read'><button>Read</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g --header "X-TOKEN: $token" --request GET  %27http://localhost:3000/api/database/test/inventory/find?query={"item":"canvas"}%27' title='Launch'><button class="button1">Read</button></a>
 
 ## Update Operations
 
@@ -91,7 +93,8 @@ syntax as read operations.
    }
 )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$db.inventory.updateOne({item:"canvas"},{$set:{"size.uom":"cm",status:"P"},$currentDate:{lastModified:true}})' title='Update'><button>Update</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g -H "Content%2DType: application/json" -H "X-TOKEN: $token" --request PUT --data %27{"$set":{"size.uom":"cm","status":"P"},"$currentDate":{"lastModified":true}}%27 %27http://localhost:3000/api/database/test/inventory/updateOne?query={"item":"canvas"}%27' title='Launch'><button class="button1">Update</button></a>
+
 
 ## Delete Operations
 
@@ -114,9 +117,9 @@ syntax as read operations.
 ### Example
 
 
-> `db.inventory.deleteMany({})`
+> `db.inventory.removeOne({})`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$db.inventory.deleteMany({})' title='Delete'><button>Delete</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g -H "X-TOKEN: $token"  --request DELETE %27http://localhost:3000/api/database/test/inventory/removeOne?query={"item":"canvas"}%27' title='Launch'><button class="button1">Delete</button></a>
 
 
 ### Sample Applications

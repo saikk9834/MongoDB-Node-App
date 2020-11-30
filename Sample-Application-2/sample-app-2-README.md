@@ -38,7 +38,7 @@
     ```
 
     
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl%20--header%20%22Content-Type%3A%20application%2Fjson%22%20--request%20POST%20--data%20%27%7B%22username%22%3A%22%22%2C%22password%22%3A%22%22%2C%22hosts%22%3A%5B%7B%22host%22%3A%22a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com%22%2C%22port%22%3A%2027017%7D%5D%7D%27%20http%3A%2F%2Flocalhost%3A3000%2Fapi%2Flogin%20--silent%20%3E%20token%20%26%26%20%20export%20token%3D%60sed%20-e%20%27s%2F%5E.%2A%22token%22%3A%22%5C%28%5B%5E%22%5D%2A%5C%29%22.%2A%24%2F%5C1%2F%27%20token%60' title='Launch'><button class="button1">Login</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl --header "Content-Type: application/json" --request POST --data %27{"username":"","password":"","hosts":[{"host":"a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com","port": 27017}]}%27 http://localhost:3000/api/login --silent %3E token %26%26 export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 token%60' title='Launch'><button class="button1">Login</button></a>
 
 2. Use any of the endpoint to work with your database (i.e. find all elements in the "COLL" collection in the DBNAME db)
 
@@ -91,13 +91,13 @@
 
       ```
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27%7B"simpleDoc"%3A"doc","name"%3A"name","age"%3A"25"%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2Finsert' title='Launch'><button class="button1">Insert</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27{"simpleDoc":"doc","name":"name","age":"25"%7D%27 http://localhost:3000/api/database/test/inventory/insert' title='Launch'><button class="button1">Insert</button></a>
 
 
 4. Delete from the Database
 
       ```
-      DELETE http://localhost:3000/api/database/test/inventory/removeOne?query={"age": {"$gte": 1}}
+      DELETE http://localhost:3000/api/database/test/inventory/remove?query={"age": {"$gte": 1}}
       X-TOKEN: TOKEN
 
       Response:
@@ -108,7 +108,7 @@
 
       ```
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl+-H+%22X-TOKEN%3A+%24token%22+-H+%22Content-Type%3A+application%2Fjson%22+--request+DELETE+-d+%27%7B%22criteria%22+%3A+%7B%22age%22%3A+%2225%22%7D%7D%27+http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2FremoveOne' title='Launch'><button class="button1">Delete</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g -H "X-TOKEN: $token"  --request DELETE %27http://localhost:3000/api/database/test/inventory/removeOne?query={"item":"canvas"}%27' title='Launch'><button class="button1">Delete</button></a>
 
 
 5. Update entries in the Database
@@ -132,7 +132,7 @@
 
       ```
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest PUT %2D%2Ddata %27%7B%22%24set%22%3A%20%7B%22age%22%3A%2056%7D%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2FupdateOne%3Fquery%3D%7B%22age%22%3A%20%7B%22%24gte%22%3A%208%7D%7D' title='Launch'><button class="button1">Update</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -H "Content%2DType: application/json" -H "X-TOKEN: $token" --request PUT --data %27{$set:{"size.uom":"cm",status:"P"},$currentDate:{lastModified:true}}%27 http://localhost:3000/api/database/test/inventory/updateOne?query' title='Launch'><button class="button1">Update</button></a>
 
 
 6. Logout (to destroy the connexion on the server side) ! 
@@ -149,4 +149,4 @@
     }
     ```
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl %2Dg %2D%2Dheader "X-TOKEN: $token" %2D%2Drequest POST  %27http%3A%2F%2Flocalhost%3A3000%2Fapi%2Flogout%27$$cat token' title='Launch'><button class="button1">Logout</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl %2Dg %2D%2Dheader "X-TOKEN: $token" %2D%2Drequest POST  %27http://localhost:3000/api/logout%27$$cat token' title='Launch'><button class="button1">Logout</button></a>
