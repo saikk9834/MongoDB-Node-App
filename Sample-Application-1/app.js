@@ -33,29 +33,13 @@ personController(app, mongoose)
 personSetup(app, mongoose)
 
 // kick web server off
-var net = require('net');
-var server = net.createServer();
-
-server.once('error', function(err) {
-  if (err.code === 'EADDRINUSE') {
-    console.log('port is currently in use')
-  }
-});
-
-server.once('listening', function() {
-  // close the server if listening doesn't fail
-  server.close();
-});
-
-server.listen(port);
-
 
 app.get('/exit', function(req,res) {
       res.render('index.ejs');
       srvr.close(0);
   
   })
-//var srvr = app.listen(port)
+var srvr = app.listen(port)
 
 app.get('/exit', function(req,res) {
     srvr.close(0);
