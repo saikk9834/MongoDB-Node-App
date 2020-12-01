@@ -7,7 +7,7 @@ Demo code that excercises MongoDB Create Read Update Delete (CRUD) operations wi
 
 ## Let's Launch the Application
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$node%20MongoDB-Node-App/Sample-Application-1/app.js' title='Launch'><button class="button1">Launch Application</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$node%20MongoDB-Node-App/Sample-Application-1/app.js %26 ps -e | grep node' title='Launch'><button class="button1">Launch Application</button></a>
 
 ## Contains:
 - /config = mongo connection config (sample)
@@ -88,7 +88,8 @@ Please make sure that you have made the following changes before trying out DELE
 ```
 Now Relaunch the app!!
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$node%20MongoDB-Node-App/Sample-Application-1/app.js' title='Launch'><button class="button1">Relaunch Application</button></a>
+<a href="didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$ps -ef | grep 'node MongoDB' | awk '{print $1}' | xargs kill -9;node%20MongoDB-Node-App/Sample-Application-1/app.js" title='Launch'><button class="button1">Relaunch Application</button></a>
+
 ## More Info
 For more information on MongoDB:
 https://www.mongodb.com/what-is-mongodb
