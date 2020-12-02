@@ -1,17 +1,16 @@
+<h1 class="om-type__headline-05 om-type--REGULAR">MongoDB Enterprise Advanced from IBM</h1>
+<div class="bx--col"><img class="om-p--42" src="https://mp.s81c.com/pwb-production/13e122ce06ac87807c6d2745fd461fe4/mongoDBProductLogo-5ff4a2bb-f572-4af4-8131-01f14e8f9a38_5f759619-964e-4c17-be4f-b517c050828a.png" alt="MongoDB Enterprise Advanced from IBM logo"></div>
+
+<p class="om-type__body-text-03 om-margin--TOP--5">A robust, scalable, highly available document database solution that enables developers and supports mission-critical enterprise deployments.</p>
+
+## Overview
+<p class="om-type__body-text-03">IBM Data Management Platform for MongoDB Enterprise Advanced is a data platform and document database that enables developers to build apps faster and distribute data to where it needs to be, with the freedom to run anywhere. This modern database platform provides a rich data environment and enterprise tooling to support mission-critical, highly secure and always-on deployments.</p>
+
+
 # MongoDB CRUD Operations
 
 
 CRUD operations *create*, *read*, *update*, and *delete*
-
-## Pre-Requisites
-
-Connect & Launch MongoDB Shell <span>&#8594;</span>
- <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=MongoDB%20Shell$$mongo%20%22mongodb://a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com:27017/?readPreference=primary%26ssl=false%22' title='Connect'><button>Connect & Launch</button></a>   
-
-## OR
-
-Connect to MongoDB of your choice <span>&#8594;</span>
- <a href='didact://?commandId=mdb.connect' title='Configure and Connect'><button>Configure & Connect</button></a>  
  
 ## Login to the API (create a server connection on the API server side)
 
@@ -38,7 +37,7 @@ Response:
     } 
     
 
- <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl --header "Content-Type: application/json" --request POST --data %27{"username":"","password":"","hosts":[{"host":"a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com","port": 27017}]}%27 http://localhost:3000/api/login --silent %3E token %26%26 export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 token%60' title='Launch'><button class="button1">Login</button></a>
+ <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&&text=T1$$cd MongoDB-Node-App/Sample-Application-2 %26%26 npm start&&text=T2$$curl --header "Content-Type: application/json" --request POST --data %27{"username":"","password":"","hosts":[{"host":"a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com","port": 27017}]}%27 http://localhost:3000/api/login --silent %3E token %26%26 export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 token%60' title='Launch'><button class="button1">Login</button></a>
 
 ## Create Operations
 
