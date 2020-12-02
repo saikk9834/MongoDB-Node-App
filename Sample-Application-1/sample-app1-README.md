@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+    }
+    .button1 {
+      border-radius: 8px;
+      padding: 15px 75px;
+      padding-bottom: 10px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+  
+}
+  </style>
+</head>
+<body>
+<div class="main">
+
 ## MongoDB CRUD in Node.js - Example / Demo Code
 
 ## What is this?
@@ -99,3 +131,9 @@ https://www.npmjs.com/package/express
 
 For more information on Mongoose:
 https://www.npmjs.com/package/mongoose
+
+</div>
+
+</body>
+
+</html>
