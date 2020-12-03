@@ -40,7 +40,7 @@ Response:
     } 
     
 
- <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&&text=T2$$curl --header "Content-Type: application/json" --request POST --data %27{"username":"","password":"","hosts":[{"host":"a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com","port": 27017}]}%27 http://localhost:3000/api/login --silent %3E token %26%26 export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 token%60' title='Launch'><button class="button1">Login</button></a>
+ <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&&text=T2$$curl --header "Content-Type: application/json" --request POST --data %27{"username":"","password":"","hosts":[{"host":"a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com","port": 27017}]}%27 http://localhost:3000/api/login --silent %3E token %26%26 export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 token%60 %26%26 if [[ $token[1] == "{" ]]; then echo %27Failure in Logging in%27; else echo %27Login Success%27; fi' title='Launch'><button class="button1">Login</button></a>
 
 ## Create Operations
 
