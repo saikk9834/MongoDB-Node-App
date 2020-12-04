@@ -15,33 +15,6 @@
 
 CRUD operations *create*, *read*, *update*, and *delete*
  
-## Login to the API (create a server connection on the API server side)
-
-    POST http://localhost:3000/api/login
-    Content-Type: application/json
-    
-    {
-      "username": "",
-      "password": "",
-      "hosts": [
-        {
-          "host": "localhost",
-          "port": 27017
-        }
-      ]
-    }
-
-    
-Response:
-    
-    {
-        "success" : true,
-        "token": "TOKEN"
-    } 
-    
-
- <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&&text=T2$$curl --header "Content-Type: application/json" --request POST --data %27{"username":"","password":"","hosts":[{"host":"a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com","port": 27017}]}%27 http://localhost:3000/api/login --silent %3E token %26%26 export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 token%60 %26%26 if [[ $token[1] == "{" ]]; then echo %27Failure in Logging in%27; else echo %27Login Success%27; fi' title='Launch'><button class="button1">Login</button></a>
-
 ## Create Operations
 
 
@@ -68,7 +41,7 @@ write operations in MongoDB are `atomic` on the level of a single
    { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
 )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27%7B"item":"canvas","qty":"100","tags":["cotton"],"size":{"h":28,"w":35.5,"uom":"cm"}%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2Finsert' title='Launch'><button class="button1">Insert</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 ./Sample-Application-2/token%60 %26%26 curl %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27%7B"item":"canvas","qty":"100","tags":["cotton"],"size":{"h":28,"w":35.5,"uom":"cm"}%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2Finsert' title='Launch'><button class="button1">Insert</button></a>
 
 
 ## Read Operations
