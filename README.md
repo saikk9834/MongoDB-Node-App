@@ -41,7 +41,7 @@ write operations in MongoDB are `atomic` on the level of a single
    { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
 )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 ./Sample-Application-2/token%60 %26%26 curl %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27%7B"item":"canvas","qty":"100","tags":["cotton"],"size":{"h":28,"w":35.5,"uom":"cm"}%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2Finsert' title='Launch'><button class="button1">Insert</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 MongoDB-Node-App/Sample-Application-2/token%60 %26%26 curl %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27%7B"item":"canvas","qty":"100","tags":["cotton"],"size":{"h":28,"w":35.5,"uom":"cm"}%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2Finsert' title='Launch'><button class="button1">Insert</button></a>
 
 
 ## Read Operations
