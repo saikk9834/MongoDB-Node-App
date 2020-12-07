@@ -7,7 +7,7 @@ var fs = require('fs')
 
 // express setup
 var app = express()
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 3030
 
 // Controllers
 var personController = require('./controllers/personController')
