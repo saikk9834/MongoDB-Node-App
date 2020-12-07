@@ -7,7 +7,7 @@ var fs = require('fs')
 
 // express setup
 var app = express()
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 3030
 
 // Controllers
 var personController = require('./controllers/personController')
@@ -24,10 +24,6 @@ app.use('/assets', express.static(__dirname + '/public'))
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs')
 
-app.get('/exit', function(req,res) {
-    res.render('/');
-    process.abort(0);
-})
 
 // connect to mongodb
 mongoose.connect(mongourl)
@@ -37,6 +33,16 @@ personController(app, mongoose)
 personSetup(app, mongoose)
 
 // kick web server off
+
+app.get('/exit', function(req,res) {
+      res.render('index.ejs');
+      srvr.close(0);
+  
+  })
 var srvr = app.listen(port)
 
+app.get('/exit', function(req,res) {
+    srvr.close(0);
+
+})
 console.log('mongo client listening on port', port)

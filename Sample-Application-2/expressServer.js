@@ -56,7 +56,7 @@ class ExpressServer {
   addErrorHandler() {
     this.app.use('*', (req, res) => {
       res.status(404);
-      res.send(JSON.stringify({ error: `path ${req.baseUrl} doesn't exist` }));
+      res.send(JSON.stringify({ status: 'Launch Success'}));
     });
     /**
      * suppressed eslint rule: The next variable is required here, even though it's not used.

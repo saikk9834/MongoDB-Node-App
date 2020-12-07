@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+    }
+    .button1 {
+      border-radius: 8px;
+      padding: 15px 75px;
+      padding-bottom: 10px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+  
+}
+  </style>
+</head>
+<body>
+<div class="main">
+
 ## MongoDB CRUD in Node.js - Example / Demo Code
 
 ## What is this?
@@ -7,7 +39,7 @@ Demo code that excercises MongoDB Create Read Update Delete (CRUD) operations wi
 
 ## Let's Launch the Application
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$node%20MongoDB-Node-App/Sample-Application-1/app.js' title='Launch'><button class="button1">Launch Application</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$node%20MongoDB-Node-App/Sample-Application-1/app.js %26 ps -e | grep node' title='Launch'><button class="button1">Launch Application</button></a>
 
 ## Contains:
 - /config = mongo connection config (sample)
@@ -88,7 +120,8 @@ Please make sure that you have made the following changes before trying out DELE
 ```
 Now Relaunch the app!!
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$node%20MongoDB-Node-App/Sample-Application-1/app.js' title='Launch'><button class="button1">Relaunch Application</button></a>
+<a href="didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$ps -ef | grep 'node MongoDB' | awk '{print $1}' | xargs kill -9;node%20MongoDB-Node-App/Sample-Application-1/app.js" title='Launch'><button class="button1">Relaunch Application</button></a>
+
 ## More Info
 For more information on MongoDB:
 https://www.mongodb.com/what-is-mongodb
@@ -98,3 +131,9 @@ https://www.npmjs.com/package/express
 
 For more information on Mongoose:
 https://www.npmjs.com/package/mongoose
+
+</div>
+
+</body>
+
+</html>
