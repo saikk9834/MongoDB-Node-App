@@ -6,9 +6,9 @@
 ## Overview
 <p class="om-type__body-text-03">IBM Data Management Platform for MongoDB Enterprise Advanced is a data platform and document database that enables developers to build apps faster and distribute data to where it needs to be, with the freedom to run anywhere. This modern database platform provides a rich data environment and enterprise tooling to support mission-critical, highly secure and always-on deployments.</p>
 
-## Launch the Application
+## Login
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T1$$cd MongoDB-Node-App/Sample-Application-2 %26%26 npm start' title='Launch'><button class="button1">Launch Application</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T1$$cd MongoDB-Node-App/Sample-Application-2 %26%26 npm start' title='Launch'><button class="button1">Login</button></a>
 
 # MongoDB CRUD Operations
 
@@ -62,7 +62,7 @@ You can specify `query filters or criteria` that identify the documents to retur
 
 > `db.inventory.find( { item: "canvas" } )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g --header "X-TOKEN: $token" --request GET  %27http://localhost:3000/api/database/test/inventory/find?query={"item":"canvas"}%27' title='Launch'><button class="button1">Read</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g --header "X-TOKEN: $token" --request GET  %27http://localhost:3000/api/database/test/inventory/find?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-1/jsonpp-1.3.0/jsonpp' title='Launch'><button class="button1">Read</button></a>
 
 ## Update Operations
 
