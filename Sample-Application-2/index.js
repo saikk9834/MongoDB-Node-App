@@ -43,44 +43,40 @@ function firstFunction() {
           const runcommandjsonpp = '[ ! -f jsonpp-1.3.0-linux-x86_64.zip ] && [ `wget https://github.com/jmhodges/jsonpp/releases/download/1.3.0/jsonpp-1.3.0-linux-x86_64.zip > output` ]';
     exec(runcommandjsonpp, (error, stdout, stderr) => {
     if (error) {
-        console.log(`error: ${error.message}`);
 
     }
     if (stderr) {
-        console.log(`stderr: ${stderr}`);
 
     }
-    console.log(`stdout: ${stdout}`);
 });
           let y = 0
           setTimeout(() => {
             for(i=0; i<10; i++){
                y++
-            }
-             console.log('loop completed')  
+            } 
              resolve(y)
           }, 2000)
       })
     }
     //2. Create an async function
     async function secondFunction() {
-        console.log('before promise call')
         //3. Await for the first function to complete
         let result = await firstFunction()
         const runcommandextract = 'unzip jsonpp-1.3.0-linux-x86_64.zip > output';
     exec(runcommandextract, (error, stdout, stderr) => {
     if (error) {
-        console.log(`error: ${error.message}`);
+
         return;
     }
     if (stderr) {
-        console.log(`stderr: ${stderr}`);
+
         return;
     }
-    console.log(`stdout: ${stdout}`);
+
 });
-        console.log('promise resolved: ' + result)
-        console.log('next step')
+        console.log('Sucessfully Connected to the Database.')
+        console.log('Host : a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com')
+        console.log('Port : 27017')
     }; 
 
     secondFunction()
