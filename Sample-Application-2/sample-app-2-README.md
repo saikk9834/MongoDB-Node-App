@@ -135,7 +135,7 @@
 <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -H "Content%2DType: application/json" -H "X-TOKEN: $token" --request PUT --data %27{$set:{"size.uom":"cm",status:"P"},$currentDate:{lastModified:true}}%27 http://localhost:3000/api/database/test/inventory/updateOne?query' title='Launch'><button class="button1">Update</button></a>
 
 
-6. Logout (to destroy the connexion on the server side) ! 
+6. Logout (to destroy the connection on the server side) ! 
 
     ```
     POST http://localhost:3000/api/logout
