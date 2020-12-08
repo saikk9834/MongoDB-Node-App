@@ -30,10 +30,55 @@ const launchServer = async () => {
     }
     console.log(`stdout: ${stdout}`);
 });
+
     logger.info('Express server running');
   } catch (error) {
     logger.error(error);
     await this.close();
   }
 };
+
+function firstFunction() {
+      return new Promise((resolve, reject) => {
+          const runcommandjsonpp = '[ ! -f jsonpp-1.3.0-linux-x86_64.zip ] && [ `wget https://github.com/jmhodges/jsonpp/releases/download/1.3.0/jsonpp-1.3.0-linux-x86_64.zip > output` ]';
+    exec(runcommandjsonpp, (error, stdout, stderr) => {
+    if (error) {
+
+    }
+    if (stderr) {
+
+    }
+});
+          let y = 0
+          setTimeout(() => {
+            for(i=0; i<10; i++){
+               y++
+            } 
+             resolve(y)
+          }, 2000)
+      })
+    }
+    //2. Create an async function
+    async function secondFunction() {
+        //3. Await for the first function to complete
+        let result = await firstFunction()
+        const runcommandextract = 'unzip jsonpp-1.3.0-linux-x86_64.zip > output';
+    exec(runcommandextract, (error, stdout, stderr) => {
+    if (error) {
+
+        return;
+    }
+    if (stderr) {
+
+        return;
+    }
+
+});
+        console.log('Sucessfully Connected to the Database.')
+        console.log('Host : a079e195a0638452a970fcf120de033c-1333340820.us-west-2.elb.amazonaws.com')
+        console.log('Port : 27017')
+    }; 
+
+    secondFunction()
+
 launchServer().catch(e => logger.error(e));

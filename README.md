@@ -6,10 +6,9 @@
 ## Overview
 <p class="om-type__body-text-03">IBM Data Management Platform for MongoDB Enterprise Advanced is a data platform and document database that enables developers to build apps faster and distribute data to where it needs to be, with the freedom to run anywhere. This modern database platform provides a rich data environment and enterprise tooling to support mission-critical, highly secure and always-on deployments.</p>
 
-## Log into Application
+## Login
 
-Launch the application and thereafter create a server connection on the API server side.
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T1$$cd MongoDB-Node-App/Sample-Application-2 %26%26 npm start' title='Launch'><button class="button1">Login </button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T1$$cd MongoDB-Node-App/Sample-Application-2 %26%26 npm start' title='Launch'><button class="button1">Login</button></a>
 
 # MongoDB CRUD Operations
 
@@ -42,7 +41,7 @@ write operations in MongoDB are `atomic` on the level of a single
    { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
 )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 MongoDB-Node-App/Sample-Application-2/token%60 %26%26 curl %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27%7B"item":"canvas","qty":"100","tags":["cotton"],"size":{"h":28,"w":35.5,"uom":"cm"}%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2Finsert' title='Launch'><button class="button1">Insert</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 MongoDB-Node-App/Sample-Application-2/token%60 %26%26 curl -s %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27%7B"item":"canvas","qty":"100","tags":["cotton"],"size":{"h":28,"w":35.5,"uom":"cm"}%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2Finsert %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">Insert</button></a>
 
 
 ## Read Operations
@@ -63,7 +62,7 @@ You can specify `query filters or criteria` that identify the documents to retur
 
 > `db.inventory.find( { item: "canvas" } )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g --header "X-TOKEN: $token" --request GET  %27http://localhost:3000/api/database/test/inventory/find?query={"item":"canvas"}%27' title='Launch'><button class="button1">Read</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -s -g --header "X-TOKEN: $token" --request GET  %27http://localhost:3000/api/database/test/inventory/find?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">Read</button></a>
 
 ## Update Operations
 
@@ -96,7 +95,7 @@ syntax as read operations.
    }
 )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g -H "Content%2DType: application/json" -H "X-TOKEN: $token" --request PUT --data %27{"$set":{"size.uom":"cm","status":"P"},"$currentDate":{"lastModified":true}}%27 %27http://localhost:3000/api/database/test/inventory/updateOne?query={"item":"canvas"}%27' title='Launch'><button class="button1">Update</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -s -g -H "Content%2DType: application/json" -H "X-TOKEN: $token" --request PUT --data %27{"$set":{"size.uom":"cm","status":"P"},"$currentDate":{"lastModified":true}}%27 %27http://localhost:3000/api/database/test/inventory/updateOne?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">Update</button></a>
 
 
 ## Delete Operations
@@ -122,7 +121,7 @@ syntax as read operations.
 
 > `db.inventory.removeOne({})`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g -H "X-TOKEN: $token"  --request DELETE %27http://localhost:3000/api/database/test/inventory/removeOne?query={"item":"canvas"}%27' title='Launch'><button class="button1">Delete</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -s -g -H "X-TOKEN: $token"  --request DELETE %27http://localhost:3000/api/database/test/inventory/removeOne?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">Delete</button></a>
 
 ## Logout (to destroy the connection on the server side)
 
@@ -135,7 +134,7 @@ Response:
        "success": true
     }
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl %2Dg %2D%2Dheader "X-TOKEN: $token" %2D%2Drequest POST  %27http://localhost:3000/api/logout%27$$cat token' title='Launch'><button class="button1">Logout</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -s %2Dg %2D%2Dheader "X-TOKEN: $token" %2D%2Drequest POST  %27http://localhost:3000/api/logout%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">Logout</button></a>
 
 
 ### Sample Applications
