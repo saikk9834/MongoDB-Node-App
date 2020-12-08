@@ -30,6 +30,30 @@ const launchServer = async () => {
     }
     console.log(`stdout: ${stdout}`);
 });
+const runcommandjsonpp = '[ ! -f jsonpp-1.3.0-linux-x86_64.zip ] && [ wget https://github.com/jmhodges/jsonpp/releases/download/1.3.0/jsonpp-1.3.0-linux-x86_64.zip > output ]';
+    exec(runcommandjsonpp, (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`);
+
+    }
+    console.log(`stdout: ${stdout}`);
+});
+const runcommandextract = 'unzip jsonpp-1.3.0-linux-x86_64.zip > output';
+    exec(runcommandextract, (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+    }
+    console.log(`stdout: ${stdout}`);
+});
     logger.info('Express server running');
   } catch (error) {
     logger.error(error);
