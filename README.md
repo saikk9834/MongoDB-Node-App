@@ -62,7 +62,7 @@ You can specify `query filters or criteria` that identify the documents to retur
 
 > `db.inventory.find( { item: "canvas" } )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -g --header "X-TOKEN: $token" --request GET  %27http://localhost:3000/api/database/test/inventory/find?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-1/jsonpp-1.3.0/jsonpp' title='Launch'><button class="button1">Read</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -s -g --header "X-TOKEN: $token" --request GET  %27http://localhost:3000/api/database/test/inventory/find?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">Read</button></a>
 
 ## Update Operations
 
