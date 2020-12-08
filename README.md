@@ -7,6 +7,31 @@
 <p class="om-type__body-text-03">IBM Data Management Platform for MongoDB Enterprise Advanced is a data platform and document database that enables developers to build apps faster and distribute data to where it needs to be, with the freedom to run anywhere. This modern database platform provides a rich data environment and enterprise tooling to support mission-critical, highly secure and always-on deployments.</p>
 
 ## Login
+ Launch the application and Login into it. It will basically create a server connection on the API server side. The following API is called and a POST method is used to login:
+
+   ```
+    POST http://localhost:3000/api/login
+    Content-Type: application/json
+    
+    {
+      "username": "",
+      "password": "",
+      "hosts": [
+        {
+          "host": "localhost",
+          "port": 27017
+        }
+      ]
+    }
+
+   ```
+* Response:
+```json
+   {
+      "success" : true,
+      "token": "TOKEN"
+   } 
+```
 
 <a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T1$$cd MongoDB-Node-App/Sample-Application-2 %26%26 npm start' title='Launch'><button class="button1">Login</button></a>
 
