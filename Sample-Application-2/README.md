@@ -61,7 +61,7 @@ Pull-request for new feature or bug correction are welcomed ! Feel free to contr
     }
     ```
    
-3. Logout (to destroy the connexion on the server side) ! 
+3. Logout (to destroy the connection on the server side) ! 
 
     ```
     POST http://localhost:3000/api/logout
