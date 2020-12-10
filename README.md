@@ -17,6 +17,29 @@
         font-family: Helvetica;
 
 }
+.navbar {
+      overflow: hidden;
+      background-color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+        .navbar a {
+      float: left;
+      display: block;
+      text-align: center;
+      padding: 5px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .main {
+      padding: 16px;
+      margin-top: 10px;
+      height: 1500px;
+      /* Used in this example to enable scrolling */
+    }
   
 }
   </style>
@@ -24,7 +47,9 @@
 <body>
 <div class="main">
  
+ <div class="navbar">
 <h1 class="om-type__headline-05 om-type--REGULAR">MongoDB Enterprise Advanced from IBM</h1>
+ </div>
 <div class="bx--col"><img class="om-p--42" src="https://mp.s81c.com/pwb-production/13e122ce06ac87807c6d2745fd461fe4/mongoDBProductLogo-5ff4a2bb-f572-4af4-8131-01f14e8f9a38_5f759619-964e-4c17-be4f-b517c050828a.png" alt="MongoDB Enterprise Advanced from IBM logo"></div>
 
 <p class="om-type__body-text-03 om-margin--TOP--5">A robust, scalable, highly available document database solution that enables developers and supports mission-critical enterprise deployments.</p>
