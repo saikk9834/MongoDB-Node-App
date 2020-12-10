@@ -9,19 +9,13 @@
     }
     .button1 {
       border-radius: 8px;
-      padding: 15px 75px;
-      padding-bottom: 10px;
+      padding: 16px 16px;
       text-align: center;
-      display: inline-block;
       font-size: 16px;
-      margin: 4px 2px;
-  background-color: white;
-  color: black;
-  border: 2px solid #4CAF50;
-}
-.button1:hover {
-  background-color: #4CAF50;
+  background-color: #FF0000;
   color: white;
+        font-family: Helvetica;
+
 }
   
 }
@@ -39,7 +33,7 @@ Demo code that excercises MongoDB Create Read Update Delete (CRUD) operations wi
 
 ## Let's Launch the Application
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$node%20MongoDB-Node-App/Sample-Application-1/app.js %26 ps -e | grep node' title='Launch'><button class="button1">Launch Application</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$node%20MongoDB-Node-App/Sample-Application-1/app.js %26 ps -e | grep node' title='Launch'><button class="button1">**Launch Application**</button></a>
 
 ## Contains:
 - /config = mongo connection config (sample)
@@ -91,6 +85,7 @@ Please make sure that you have made the following changes before trying out DELE
           alt="Exit Button" title="Exit Button" style="height: 250px; margin-left: 3%;">
 
 2. Go to the `personController.js` file in controllers folder
+<a href='didact://?commandId=file-search.openFile&text=/projects/MongoDB-Node-App/Sample-Application-1/controllers/personController.js' title='Launch'><button class="button1">**Open File**</button></a>
 3. Follow the steps on Line 151
 ### OR
 3. Delete the code from Line 153 to 156
@@ -120,7 +115,7 @@ Please make sure that you have made the following changes before trying out DELE
 ```
 Now Relaunch the app!!
 
-<a href="didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$ps -ef | grep 'node MongoDB' | awk '{print $1}' | xargs kill -9;node%20MongoDB-Node-App/Sample-Application-1/app.js %26" title='Launch'><button class="button1">Relaunch Application</button></a>
+<a href="didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$ps -ef | grep 'node MongoDB' | awk '{print $1}' | xargs kill -9;node%20MongoDB-Node-App/Sample-Application-1/app.js %26" title='Launch'><button class="button1">**Relaunch Application**</button></a>
 
 ## More Info
 For more information on MongoDB:
