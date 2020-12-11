@@ -8,12 +8,15 @@
       margin: 0;
     }
     .button1 {
-      border-radius: 8px;
-      padding: 8px 8px;
+    padding: 8px 12px 8px 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0px 5px 0px;
+    font-size: 12px;
+    color: #fff;
       text-align: center;
       font-size: 16px;
   background-color: #FF0000;
-  color: white;
         font-family: Helvetica;
 
 }
