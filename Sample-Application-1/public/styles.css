@@ -1,6 +1,6 @@
 .simple-style {
     margin :10px;
-    background-color: rgb(220, 232, 247); 
+    background-color: rgb(255, 255, 255); 
     font-family : Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
@@ -25,7 +25,7 @@
 
 .simple-style .titlediv {
     padding : 8px 16px ;
-    background-color: rgb(31, 104, 122);
+    background-color: rgb(21, 21, 21);
 
 }
 
@@ -34,10 +34,10 @@
     display: block;
     height: 1px;
     border: 0px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgb(255, 255, 255);
     margin: 0;
     padding : 0px 0px 0px 0px;
-    border-color :rgb(153, 213, 228);
+    border-color :rgb(255, 255, 255);
 
 }
 .simple-style span {
@@ -74,7 +74,7 @@
     padding : 5px;
     display : block;
     font-weight : bold;
-    color: rgb(197, 227, 228);
+    color: rgb(255, 255, 255);
 }
 
 .simple-style h3 {
@@ -149,7 +149,8 @@
     display : block;
     font : 14px;
     margin: 5px;
-    background-color :rgb(235, 235, 235);
+    color:rgb(255, 255, 255);
+    background-color :rgb(21, 21, 21);
     width: 100%;
     height: 60em;
 }
@@ -291,16 +292,17 @@ select {
 }
 
 .simple-style input[type=submit], .simple-style input[type=button]{
-    background: rgb(31, 104, 122);
+    background: rgb(21, 21, 21);
     padding: 8px 12px 8px 12px;
     border: none;
-    margin: 5px;
+    border-radius: 4px;
+    margin: 5px 0px 5px 0px;
     font-size: 12px;
     color: #fff;
 }
 
 .simple-style input[type=submit]:hover, .simple-style input[type=button]:hover{
-    background: rgb(0, 9, 12);
+    background: rgb(238, 0, 0);
     box-shadow:none;
     -moz-box-shadow:none;
     -webkit-box-shadow:none;
@@ -363,7 +365,7 @@ input[readonly]
 
 /* enabled menu button */
 .simple-style .enabled {    
-    background-color: rgb(4, 25, 36);
+    background-color: rgb(238, 0, 0);
 }
 
 /* menu divs are padded */

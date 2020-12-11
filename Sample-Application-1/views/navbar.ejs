@@ -6,8 +6,7 @@
         <input class ="menu-button" type="submit" value="Read" onclick="displayOption('2')">
         <input class ="menu-button" type="submit" value="Update" onclick="displayOption('3')">
         <input class ="menu-button" type="submit" value="Delete" onclick="displayOption('4')"> 
-        <input type="button" onclick="location.href='/';" value="Reset" />
-        <input type="button" onclick="location.href='/exit';" value="Exit">
+        <input class ="menu-button" type="button" onclick="location.href='/';" value="Reset" />
     </div>
 
 
@@ -17,13 +16,10 @@
         var i;
         var activediv = document.getElementsByClassName("menu-div");
         var activebutton = document.getElementsByClassName("menu-button");
-        if(activeOption==5){
-            process.exit(0);
-        }
         for (i = 0; i < activediv.length; i++) {
             if (i == activeOption) {    
                 activediv[i].style.display = "block"; 
-                activebutton[i].style.background = "rgb(0, 9, 12)";
+                activebutton[i].style.background = "rgb(238, 0, 0)";
             } else {
                 activediv[i].style.display  = "none"; 
                 activebutton[i].style.background = "";

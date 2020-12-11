@@ -4,7 +4,7 @@
 <div id="1" class="menu-div" style="display:none">
     <form method="POST" action="/person" >
 
-        <span>Add a person to DB collection</span><hr><br>
+        <span style="color: rgb(21, 21, 21);">Add a person to DB collection</span><hr style="border-top: 1px solid rgb(21, 21, 21);"><br>
 
             <label>Full Name:</label>
             <input type="text" name="firstname" id ="firstname" class="field-divided" placeholder="First Name" size=10  required/>
@@ -12,7 +12,7 @@
             <label>Telephone:</label>
 
             <input type="number" name="telephone" id ="telephone" class="field-small" placeholder="Telephone" size=50 required><br><br>
-            <input type="submit" value="Create Person" />
+            <input style="background: rgb(238, 0, 0);" type="submit" value="Create Person" />
     </form>
 
     <label >Response:</label>
@@ -23,8 +23,8 @@
 <!-- 2. Get Persons -->
 <div id="2" class="menu-div" style="display:none">
     <form method="GET" action="/person" >
-        <span>List persons</span><hr><br>
-        <input type="submit" value="List Persons" />
+        <span style="color: rgb(21, 21, 21);">List persons</span><hr style="border-top: 1px solid rgb(21, 21, 21);"><br>
+        <input type="submit" style="background: rgb(238, 0, 0);" value="List Persons" />
     </form>
 
     <br>
@@ -47,7 +47,7 @@ Phone: <%= ui.data[2].data[i].telephone %>
 <!-- 3. Update Persons -->
 <div id="3" class="menu-div" style="display:none">
     <form method="POST" action="/person/update">
-        <span>Update person </span><hr><br>
+        <span style="color: rgb(21, 21, 21);">Update person </span><hr style="border-top: 1px solid rgb(21, 21, 21);"><br>
         
 
             <label>Mongo ID:</label>
@@ -61,7 +61,7 @@ Phone: <%= ui.data[2].data[i].telephone %>
             <label>Telephone:</label>
 
             <input type="number" name="telephone" id ="telephone" class="field-small" placeholder="Telephone" size=50 required><br><br>
-            <input type="submit" value="Update Person" />
+            <input style="background: rgb(238, 0, 0);" type="submit" value="Update Person" />
     </form>
     <br>
     <label >Response:</label>
@@ -71,10 +71,10 @@ Phone: <%= ui.data[2].data[i].telephone %>
 <!-- 4. Delete Persons -->
 <div id="4" class="menu-div" style="display:none">
     <form method="POST" action="/person/delete" >    
-        <span>Delete person</span><hr><br>
+        <span style="color: rgb(21, 21, 21);">Delete person</span><hr style="border-top: 1px solid rgb(21, 21, 21);"><br>
         <label>Mongo ID:</label>
         <input placeholder ="Mongo ID" id ="mongoid" type="text" name ="mongoid" size=50 required><br><br>
-        <input type="submit" value="Delete Persons" />
+        <input style="background: rgb(238, 0, 0);" type="submit" value="Delete Persons" />
         <br>
     </form>
     <br>
