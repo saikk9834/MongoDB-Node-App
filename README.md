@@ -3,18 +3,24 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
+          font-family: 'Red Hat Display', sans-serif;
     }
     .button1 {
-      border-radius: 8px;
-      padding: 8px 8px;
-      text-align: center;
-      font-size: 16px;
-  background-color: #FF0000;
-  color: white;
-        font-family: Helvetica;
+    padding: 8px 12px 8px 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0px 5px 0px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    background-color: #FF0000;
+    font-family: 'Red Hat Display', sans-serif;
 
 }
 .navbar {
