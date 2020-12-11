@@ -45,6 +45,7 @@
     font-weight : bold;
     margin: 5px;
     color: rgb(31, 104, 122);
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 .simple-style span.menu {
@@ -123,6 +124,7 @@
     display : block;
     font-size : 14px;
     font-weight : bold;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 .simple-style label.light {
@@ -153,6 +155,7 @@
     background-color :rgb(21, 21, 21);
     width: 100%;
     height: 60em;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 .simple-style textarea[readonly].small {
@@ -299,6 +302,7 @@ select {
     margin: 5px 0px 5px 0px;
     font-size: 12px;
     color: #fff;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 .simple-style input[type=submit]:hover, .simple-style input[type=button]:hover{

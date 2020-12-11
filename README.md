@@ -3,6 +3,8 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+ <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -14,8 +16,7 @@
       font-size: 16px;
   background-color: #FF0000;
   color: white;
-        font-family: Helvetica;
-
+        font-family: 'Red Hat Display', sans-serif;
 }
 .navbar {
       overflow: hidden;
@@ -48,7 +49,7 @@
 <div class="main">
  
  <div class="navbar">
-<h1 class="om-type__headline-05 om-type--REGULAR">MongoDB Enterprise Advanced from IBM</h1>
+<h1 class="om-type__headline-05 om-type--REGULAR" style="font-family: 'Red Hat Display', sans-serif;">MongoDB Enterprise Advanced from IBM</h1>
  </div>
 <div class="bx--col"><img class="om-p--42" src="https://mp.s81c.com/pwb-production/13e122ce06ac87807c6d2745fd461fe4/mongoDBProductLogo-5ff4a2bb-f572-4af4-8131-01f14e8f9a38_5f759619-964e-4c17-be4f-b517c050828a.png" alt="MongoDB Enterprise Advanced from IBM logo"></div>
 

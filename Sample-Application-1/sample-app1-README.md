@@ -3,9 +3,12 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+ <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
+      font-family: 'Red Hat Display', sans-serif;
     }
     .button1 {
       border-radius: 8px;
@@ -14,8 +17,7 @@
       font-size: 16px;
   background-color: #FF0000;
   color: white;
-        font-family: Helvetica;
-
+        font-family: 'Red Hat Display', sans-serif;
 }
   
 }

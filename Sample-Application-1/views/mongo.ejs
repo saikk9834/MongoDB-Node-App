@@ -1,18 +1,21 @@
 
-
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+ <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
+</head>
 <!-- 1. Add Person to Collection -->
 <div id="1" class="menu-div" style="display:none">
     <form method="POST" action="/person" >
 
         <span style="color: rgb(21, 21, 21);">Add a person to DB collection</span><hr style="border-top: 1px solid rgb(21, 21, 21);"><br>
 
-            <label>Full Name:</label>
+            <label >Full Name:</label>
             <input type="text" name="firstname" id ="firstname" class="field-divided" placeholder="First Name" size=10  required/>
             <input type="text" name="surname" id="surname" class="field-divided" placeholder="Surname"  required/><br>
             <label>Telephone:</label>
 
             <input type="number" name="telephone" id ="telephone" class="field-small" placeholder="Telephone" size=50 required><br><br>
-            <input style="background: rgb(238, 0, 0);" type="submit" value="Create Person" />
+            <input style="background: rgb(238, 0, 0);font-family: 'Red Hat Display', sans-serif;" type="submit" value="Create Person" />
     </form>
 
     <label >Response:</label>
@@ -24,7 +27,7 @@
 <div id="2" class="menu-div" style="display:none">
     <form method="GET" action="/person" >
         <span style="color: rgb(21, 21, 21);">List persons</span><hr style="border-top: 1px solid rgb(21, 21, 21);"><br>
-        <input type="submit" style="background: rgb(238, 0, 0);" value="List Persons" />
+        <input type="submit" style="background: rgb(238, 0, 0);font-family: 'Red Hat Display', sans-serif;" value="List Persons" />
     </form>
 
     <br>
@@ -61,7 +64,7 @@ Phone: <%= ui.data[2].data[i].telephone %>
             <label>Telephone:</label>
 
             <input type="number" name="telephone" id ="telephone" class="field-small" placeholder="Telephone" size=50 required><br><br>
-            <input style="background: rgb(238, 0, 0);" type="submit" value="Update Person" />
+            <input style="background: rgb(238, 0, 0);font-family: 'Red Hat Display', sans-serif;" type="submit" value="Update Person" />
     </form>
     <br>
     <label >Response:</label>
@@ -74,7 +77,7 @@ Phone: <%= ui.data[2].data[i].telephone %>
         <span style="color: rgb(21, 21, 21);">Delete person</span><hr style="border-top: 1px solid rgb(21, 21, 21);"><br>
         <label>Mongo ID:</label>
         <input placeholder ="Mongo ID" id ="mongoid" type="text" name ="mongoid" size=50 required><br><br>
-        <input style="background: rgb(238, 0, 0);" type="submit" value="Delete Persons" />
+        <input style="background: rgb(238, 0, 0);font-family: 'Red Hat Display', sans-serif;" type="submit" value="Delete Persons" />
         <br>
     </form>
     <br>
@@ -87,27 +90,32 @@ Phone: <%= ui.data[2].data[i].telephone %>
         OR
      3. Delete the code from Line 153 to 156
      4. Paste the following code below that:
-        'Person.findByIdAndRemove(req.body.mongoid, function (err, person) {
-
-            
-        if (err) {
+        
+     Person.findByIdAndRemove(req.body.mongoid, function (err, person)
+     {   
+        if (err)
+        {
             ui.data[ui.menuitem].status = '500'
             ui.data[ui.menuitem].data = err
-        } else {
-            if (person == null) {
+        }
+        else
+        {
+            if (person == null)
+            {
                 ui.data[ui.menuitem].status = '404'
                 ui.data[ui.menuitem].data = 'person id ' + req.body.mongoid + ' not found'
-            } else {
+            }
+            else
+            {
                 ui.data[ui.menuitem].status = '200'
                 ui.data[ui.menuitem].data = person
             }
         }
-
         ui.data[ui.menuitem].action = 'delete'
         res.render('./index.ejs', {
             ui: ui
+            })
         })
-    })'
     </textarea>
     <%} else {%>
     <label>Response:</label>
