@@ -84,18 +84,13 @@ After performing Create, Read and Update operations successfully, you are requir
 
 ## How to make the DELETE button work?
 Please make sure that you have made the following changes before trying out DELETE function:
-1. Click on the exit Button to close the program
 
-<img
-          src="./screenshots/mongo_exit.png"
-          alt="Exit Button" title="Exit Button" style="height: 250px; margin-left: 3%;">
-
-2. Go to the `personController.js` file in controllers folder
+1. Go to the `personController.js` file in controllers folder
 <a href='didact://?commandId=file-search.openFile&text=/projects/MongoDB-Node-App/Sample-Application-1/controllers/personController.js' title='Launch'><button class="button1">**Open File**</button></a>
-3. Follow the steps on Line 151
+2. Follow the steps on Line 151
 ### OR
-3. Delete the code from Line 153 to 156
-4. Paste the following code below that:
+2. Delete the code from Line 153 to 156
+3. Paste the following code below that:
 
 ```
     Person.findByIdAndRemove(req.body.mongoid, function (err, person) {  
