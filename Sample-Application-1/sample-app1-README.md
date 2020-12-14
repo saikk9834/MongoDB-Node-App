@@ -21,18 +21,43 @@
     font-size: 16px;
     background-color: #FF0000;
     font-family: 'Red Hat Display', sans-serif;
-
 }
+.navbar {
+      overflow: hidden;
+      background-color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+        .navbar a {
+      float: left;
+      display: block;
+      text-align: center;
+      padding: 5px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .main {
+      padding: 16px;
+      margin-top: 10px;
+      height: 1500px;
+      /* Used in this example to enable scrolling */
+    }
   
 }
   </style>
 </head>
 <body>
 <div class="main">
+ <div class="navbar">
 
-## MongoDB CRUD in Node.js - Example / Demo Code
+## MongoDB CRUD in Node.js - Sample Application
 
-## What is this?
+ </div>
+ 
+ ## What is this?
 Demo code that excercises MongoDB Create Read Update Delete (CRUD) operations with the mongoose npm module
 
 <!-- ![Alt text](../screenshots/mongo_read.png?raw=true) -->
@@ -67,9 +92,8 @@ See https://docs.mongodb.com/manual/installation/
 
 
 ## How to run it
-```
-node app.js
-```
+Response: 
+<pre id="json">node app.js</pre>
 
 point your browser at the lport 3000 to load Client
 http://0.0.0.0:3000
@@ -90,7 +114,33 @@ Please make sure that you have made the following changes before trying out DELE
 2. Delete/Comment the code from Line 153 to 156
 3. Uncomment code from Line 159 to Line 179
 
+<<<<<<< HEAD
 Now Relaunch the app!!
+=======
+<pre id="json">
+    Person.findByIdAndRemove(req.body.mongoid, function (err, person) {  
+
+        if (err) {
+            ui.data[ui.menuitem].status = '500'
+            ui.data[ui.menuitem].data = err 
+        } else {
+            if (person == null) { 
+                ui.data[ui.menuitem].status = '404' 
+                ui.data[ui.menuitem].data = 'person id ' + req.body.mongoid + ' not found' 
+            } else { 
+                ui.data[ui.menuitem].status = '200' 
+                ui.data[ui.menuitem].data = person 
+            } 
+        } 
+        ui.data[ui.menuitem].action = 'delete' 
+        res.render('./index.ejs', { 
+            ui: ui 
+        }) 
+    })
+  
+</pre>
+Now Relaunch the app!
+>>>>>>> b2c30112753daeaa2c6c3a78bd790dd7f593195c
 
 <a href="didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$ps -ef | grep 'node MongoDB' | awk '{print $1}' | xargs kill -9;node%20MongoDB-Node-App/Sample-Application-1/app.js %26" title='Launch'><button class="button1">**Relaunch Application**</button></a>
 
