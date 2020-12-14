@@ -54,8 +54,10 @@
  <div class="navbar">
 
 ## MongoDB CRUD in Node.js - Sample Application
+</div>
 
- </div>
+<div class="bx--col"><img class="om-p--42" src="https://mp.s81c.com/pwb-production/13e122ce06ac87807c6d2745fd461fe4/mongoDBProductLogo-5ff4a2bb-f572-4af4-8131-01f14e8f9a38_5f759619-964e-4c17-be4f-b517c050828a.png" alt="MongoDB Enterprise Advanced from IBM logo"></div>
+
  
  ## What is this?
 Demo code that excercises MongoDB Create Read Update Delete (CRUD) operations with the mongoose npm module
