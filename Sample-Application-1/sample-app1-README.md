@@ -111,11 +111,12 @@ Please make sure that you have made the following changes before trying out DELE
 
 1. Go to the `personController.js` file in controllers folder
 <a href='didact://?commandId=file-search.openFile&text=/projects/MongoDB-Node-App/Sample-Application-1/controllers/personController.js' title='Launch'><button class="button1">**Open File**</button></a>
-2. Follow the steps on Line 151
-### OR
-2. Delete the code from Line 153 to 156
-3. Paste the following code below that:
+2. Delete/Comment the code from Line 153 to 156
+3. Uncomment code from Line 159 to Line 179
 
+<<<<<<< HEAD
+Now Relaunch the app!!
+=======
 <pre id="json">
     Person.findByIdAndRemove(req.body.mongoid, function (err, person) {  
 
@@ -139,6 +140,7 @@ Please make sure that you have made the following changes before trying out DELE
   
 </pre>
 Now Relaunch the app!
+>>>>>>> b2c30112753daeaa2c6c3a78bd790dd7f593195c
 
 <a href="didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$ps -ef | grep 'node MongoDB' | awk '{print $1}' | xargs kill -9;node%20MongoDB-Node-App/Sample-Application-1/app.js %26" title='Launch'><button class="button1">**Relaunch Application**</button></a>
 
