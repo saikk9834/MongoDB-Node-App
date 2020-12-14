@@ -87,33 +87,9 @@ Please make sure that you have made the following changes before trying out DELE
 
 1. Go to the `personController.js` file in controllers folder
 <a href='didact://?commandId=file-search.openFile&text=/projects/MongoDB-Node-App/Sample-Application-1/controllers/personController.js' title='Launch'><button class="button1">**Open File**</button></a>
-2. Follow the steps on Line 151
-### OR
-2. Delete the code from Line 153 to 156
-3. Paste the following code below that:
+2. Delete/Comment the code from Line 153 to 156
+3. Uncomment code from Line 159 to Line 179
 
-```
-    Person.findByIdAndRemove(req.body.mongoid, function (err, person) {  
-
-        if (err) {
-            ui.data[ui.menuitem].status = '500'
-            ui.data[ui.menuitem].data = err 
-        } else {
-            if (person == null) { 
-                ui.data[ui.menuitem].status = '404' 
-                ui.data[ui.menuitem].data = 'person id ' + req.body.mongoid + ' not found' 
-            } else { 
-                ui.data[ui.menuitem].status = '200' 
-                ui.data[ui.menuitem].data = person 
-            } 
-        } 
-        ui.data[ui.menuitem].action = 'delete' 
-        res.render('./index.ejs', { 
-            ui: ui 
-        }) 
-    })
-  
-```
 Now Relaunch the app!!
 
 <a href="didact://?commandId=vscode.didact.sendNamedTerminalAString&text=Crud$$ps -ef | grep 'node MongoDB' | awk '{print $1}' | xargs kill -9;node%20MongoDB-Node-App/Sample-Application-1/app.js %26" title='Launch'><button class="button1">**Relaunch Application**</button></a>
