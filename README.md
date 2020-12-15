@@ -85,7 +85,7 @@ Content-Type: application/json
       "token": "TOKEN"
    } </pre>
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T1$$cd MongoDB-Node-App/Sample-Application-2 %26%26 npm start' title='Launch'><button class="button1">**Login**</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T1$$cd MongoDB-Node-App/Sample-Application-2 %26%26 npm start' title='Login'><button class="button1">**Login**</button></a>
 Clicking on `Login` will perform a `POST` request to establish a connection to the MongoDB Operator.
 
 # MongoDB CRUD Operations
@@ -119,7 +119,7 @@ write operations in MongoDB are `atomic` on the level of a single
    { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } }
 )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 MongoDB-Node-App/Sample-Application-2/token%60 %26%26 curl -w "\n" -s %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27%7B"item":"canvas","qty":"100","tags":["cotton"],"size":{"h":28,"w":35.5,"uom":"cm"}%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2Finsert %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">**Insert**</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$export token=%60sed -e %27s/^.*"token":"\([^"]*\)".*$/\1/%27 MongoDB-Node-App/Sample-Application-2/token%60 %26%26 curl -w "\n" -s %2DH "Content%2DType: application/json" %2DH "X-TOKEN: $token" %2D%2Drequest POST %2D%2Ddata %27%7B"item":"canvas","qty":"100","tags":["cotton"],"size":{"h":28,"w":35.5,"uom":"cm"}%7D%27 http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdatabase%2Ftest%2Finventory%2Finsert %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Insert'><button class="button1">**Insert**</button></a>
 Clicking on `Insert` will perform a `POST` request to the already established MongoDB connection and insert data into the database.
 
 ## Read Operations
@@ -140,7 +140,7 @@ You can specify `query filters or criteria` that identify the documents to retur
 
 > `db.inventory.find( { item: "canvas" } )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -w "\n" -s -g --header "X-TOKEN: $token" --request GET  %27http://localhost:3000/api/database/test/inventory/find?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">**Read**</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -w "\n" -s -g --header "X-TOKEN: $token" --request GET  %27http://localhost:3000/api/database/test/inventory/find?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Read'><button class="button1">**Read**</button></a>
 Clicking on `Read` will perform a `GET` request to the already established MongoDB connection and get data from the database.
 
 ## Update Operations
@@ -174,7 +174,7 @@ syntax as read operations.
    }
 )`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -w "\n" -s -g -H "Content%2DType: application/json" -H "X-TOKEN: $token" --request PUT --data %27{"$set":{"size.uom":"cm","status":"P"},"$currentDate":{"lastModified":true}}%27 %27http://localhost:3000/api/database/test/inventory/updateOne?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">**Update**</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -w "\n" -s -g -H "Content%2DType: application/json" -H "X-TOKEN: $token" --request PUT --data %27{"$set":{"size.uom":"cm","status":"P"},"$currentDate":{"lastModified":true}}%27 %27http://localhost:3000/api/database/test/inventory/updateOne?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Update'><button class="button1">**Update**</button></a>
 Clicking on `Update` will perform a `PUT` request to the already established MongoDB connection and update the data in the database.
 
 ## Delete Operations
@@ -200,7 +200,7 @@ syntax as read operations.
 
 > `db.inventory.removeOne({})`
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -w "\n" -s -g -H "X-TOKEN: $token"  --request DELETE %27http://localhost:3000/api/database/test/inventory/removeOne?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">**Delete**</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -w "\n" -s -g -H "X-TOKEN: $token"  --request DELETE %27http://localhost:3000/api/database/test/inventory/removeOne?query={"item":"canvas"}%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Delete'><button class="button1">**Delete**</button></a>
 Clicking on `Delete` will perform a DELETE request to the already established MongoDB connection and delete the data from the database.
 ## Logout (to destroy the connection on the server side)
 <pre id="json">POST http://localhost:3000/api/logout
@@ -212,7 +212,7 @@ Response:
       "success" : true
    } </pre>
 
-<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -w "\n" -s %2Dg %2D%2Dheader "X-TOKEN: $token" %2D%2Drequest POST  %27http://localhost:3000/api/logout%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Launch'><button class="button1">**Logout**</button></a>
+<a href='didact://?commandId=vscode.didact.sendNamedTerminalAString&text=T2$$curl -w "\n" -s %2Dg %2D%2Dheader "X-TOKEN: $token" %2D%2Drequest POST  %27http://localhost:3000/api/logout%27 %7C /projects/MongoDB-Node-App/Sample-Application-2/jsonpp-1.3.0/jsonpp 2%3E%261' title='Logout'><button class="button1">**Logout**</button></a>
 Clicking on `Logout` will perform a `POST` request to the already established MongoDB connection and will end the session with the MongoDB Operator.
 
 ### Sample Applications
