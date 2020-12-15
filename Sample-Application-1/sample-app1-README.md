@@ -82,16 +82,10 @@ Demo code that excercises MongoDB Create Read Update Delete (CRUD) operations wi
 - Update person (needs MongoID from list function) - UPDATE crUd
 - Delete person (needs MongoID from list function) - DELETE cruD 
 
-### Setup API:
-purge mongo collection = point browser at http://0.0.0.0:3000/person/purge
-setup / seed data in collection = http://0.0.0.0:3000/person/setup
-
-
 ## Installation overview
 
 ### Install mongo DB with auth model
 See https://docs.mongodb.com/manual/installation/
-
 
 ## How to run it
 Response: 
