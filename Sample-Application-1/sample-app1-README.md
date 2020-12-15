@@ -92,7 +92,7 @@ Response:
 <pre id="json">node app.js</pre>
 
 point your browser at the lport 3000 to load Client
-http://0.0.0.0:3000
+http://localhost:3000
 
 ## Getting Started
 
